@@ -15,7 +15,7 @@ export function DayOrdersAmountCard() {
   return (
     <Card>
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-base ">Pedidos (mês)</CardTitle>
+        <CardTitle className="text-base ">Pedidos (dia)</CardTitle>
         <Utensils className="size-4 text-muted-foreground" />
       </CardHeader>
       <CardContent className="space-y-1">

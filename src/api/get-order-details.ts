@@ -1,6 +1,10 @@
 import { api } from '@/lib'
 import { OrderStatusType } from '@/types'
 
+interface getOrderDetailsParams {
+  orderId: string
+}
+
 interface GetOrderDetailsResponse {
   status: OrderStatusType
   id: string
@@ -19,10 +23,6 @@ interface GetOrderDetailsResponse {
       name: string
     }
   }[]
-}
-
-interface getOrderDetailsParams {
-  orderId: string
 }
 
 export async function getOrderDetails({ orderId }: getOrderDetailsParams) {
