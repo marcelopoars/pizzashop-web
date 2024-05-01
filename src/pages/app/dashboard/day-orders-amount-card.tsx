@@ -4,6 +4,7 @@ import { Utensils } from 'lucide-react'
 import { getDayOrdersAmount } from '@/api'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components'
 
+import { MetricsCardSkeleton } from './metrics.card-skeleton'
 import { PercentagelDifference } from './percentagelDifference'
 
 export function DayOrdersAmountCard() {
@@ -19,7 +20,7 @@ export function DayOrdersAmountCard() {
         <Utensils className="size-4 text-muted-foreground" />
       </CardHeader>
       <CardContent className="space-y-1">
-        {dayOrdersAmount && (
+        {dayOrdersAmount ? (
           <>
             <span className="text-2xl font-bold tracking-tight">
               {dayOrdersAmount.amount}
@@ -31,6 +32,8 @@ export function DayOrdersAmountCard() {
               em relação a ontem
             </p>
           </>
+        ) : (
+          <MetricsCardSkeleton />
         )}
       </CardContent>
     </Card>

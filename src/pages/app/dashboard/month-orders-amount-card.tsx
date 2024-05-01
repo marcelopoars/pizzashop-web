@@ -4,6 +4,7 @@ import { Utensils } from 'lucide-react'
 import { getMonthOrdersAmount } from '@/api'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components'
 
+import { MetricsCardSkeleton } from './metrics.card-skeleton'
 import { PercentagelDifference } from './percentagelDifference'
 
 export function MonthOrdersAmountCard() {
@@ -19,7 +20,7 @@ export function MonthOrdersAmountCard() {
         <Utensils className="size-4 text-muted-foreground" />
       </CardHeader>
       <CardContent className="space-y-1">
-        {monthOrdersAmount && (
+        {monthOrdersAmount ? (
           <>
             <span className="text-2xl font-bold tracking-tight">
               {monthOrdersAmount?.amount}
@@ -31,6 +32,8 @@ export function MonthOrdersAmountCard() {
               em relação ao mês passado
             </p>
           </>
+        ) : (
+          <MetricsCardSkeleton />
         )}
       </CardContent>
     </Card>

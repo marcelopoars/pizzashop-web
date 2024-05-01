@@ -4,6 +4,7 @@ import { DollarSign } from 'lucide-react'
 import { getMonthCanceledOrdersAmount } from '@/api'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components'
 
+import { MetricsCardSkeleton } from './metrics.card-skeleton'
 import { PercentagelDifference } from './percentagelDifference'
 
 export function MonthCanceledOrdersAmountCard() {
@@ -19,7 +20,7 @@ export function MonthCanceledOrdersAmountCard() {
         <DollarSign className="size-4 text-muted-foreground" />
       </CardHeader>
       <CardContent className="space-y-1">
-        {monthCanceledOrdersAmount && (
+        {monthCanceledOrdersAmount ? (
           <>
             <span className="text-2xl font-bold tracking-tight">
               {monthCanceledOrdersAmount.amount}
@@ -31,6 +32,8 @@ export function MonthCanceledOrdersAmountCard() {
               em relação ao mês passado
             </p>
           </>
+        ) : (
+          <MetricsCardSkeleton />
         )}
       </CardContent>
     </Card>

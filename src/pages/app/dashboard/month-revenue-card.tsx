@@ -5,6 +5,7 @@ import { getMonthRevenue } from '@/api'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components'
 import { formatCurrency } from '@/utils'
 
+import { MetricsCardSkeleton } from './metrics.card-skeleton'
 import { PercentagelDifference } from './percentagelDifference'
 
 export function MontRevenueCard() {
@@ -20,7 +21,7 @@ export function MontRevenueCard() {
         <DollarSign className="size-4 text-muted-foreground" />
       </CardHeader>
       <CardContent className="space-y-1">
-        {monthRevenue && (
+        {monthRevenue ? (
           <>
             <span className="text-2xl font-bold tracking-tight">
               {formatCurrency(monthRevenue?.receipt / 100)}
@@ -30,6 +31,8 @@ export function MontRevenueCard() {
               em relação ao mês passado
             </p>
           </>
+        ) : (
+          <MetricsCardSkeleton />
         )}
       </CardContent>
     </Card>
