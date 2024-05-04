@@ -24,7 +24,7 @@ export function SignIn() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = useForm<SignInForm>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -50,8 +50,6 @@ export function SignIn() {
       toast.error('Credenciais inválidas')
     }
   }
-
-  console.log(errors.email)
 
   return (
     <>
