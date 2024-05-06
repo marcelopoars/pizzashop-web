@@ -1,12 +1,12 @@
 import { api } from '@/lib'
 
-interface getMonthOrdersAmountResponse {
+export interface GetMonthOrdersAmountResponse {
   amount: number
   diffFromLastMonth: number
 }
 
 export async function getMonthOrdersAmount() {
-  const response = await api.get<getMonthOrdersAmountResponse>(
+  const response = await api.get<GetMonthOrdersAmountResponse>(
     '/metrics/month-orders-amount',
   )
 

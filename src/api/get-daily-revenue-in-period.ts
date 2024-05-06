@@ -1,11 +1,11 @@
 import { api } from '@/lib'
 
-interface getDailyRevenueInPeriodParams {
+interface GetDailyRevenueInPeriodParams {
   from?: Date
   to?: Date
 }
 
-type GetDailyRevenueInPeriodResponse = {
+export type GetDailyRevenueInPeriodResponse = {
   date: string
   receipt: number
 }[]
@@ -13,7 +13,7 @@ type GetDailyRevenueInPeriodResponse = {
 export async function getDailyRevenueInPeriod({
   from,
   to,
-}: getDailyRevenueInPeriodParams) {
+}: GetDailyRevenueInPeriodParams) {
   const response = await api.get<GetDailyRevenueInPeriodResponse>(
     '/metrics/daily-receipt-in-period',
     {

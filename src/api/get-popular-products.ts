@@ -1,12 +1,12 @@
 import { api } from '@/lib'
 
-type getPopularProductsResponse = {
+export type GetPopularProductsResponse = {
   product: string
   amount: number
 }[]
 
 export async function getPopularProducts() {
-  const response = await api.get<getPopularProductsResponse>(
+  const response = await api.get<GetPopularProductsResponse>(
     '/metrics/popular-products',
   )
 
