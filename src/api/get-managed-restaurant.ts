@@ -3,10 +3,10 @@ import { api } from '@/lib'
 export interface GetManagedRestaurantResponse {
   name: string
   id: string
-  createdAt: Date | null
-  updatedAt: Date | null
   description: string | null
   managerId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export async function getManagedRestaurant() {
