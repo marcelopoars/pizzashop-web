@@ -1,11 +1,11 @@
 import { api } from '@/lib'
 import { OrderStatusType } from '@/types'
 
-interface getOrderDetailsParams {
+export interface GetOrderDetailsParams {
   orderId: string
 }
 
-interface GetOrderDetailsResponse {
+export interface GetOrderDetailsResponse {
   status: OrderStatusType
   id: string
   createdAt: string
@@ -25,7 +25,7 @@ interface GetOrderDetailsResponse {
   }[]
 }
 
-export async function getOrderDetails({ orderId }: getOrderDetailsParams) {
+export async function getOrderDetails({ orderId }: GetOrderDetailsParams) {
   const response = await api.get<GetOrderDetailsResponse>(`/orders/${orderId}`)
 
   return response.data
