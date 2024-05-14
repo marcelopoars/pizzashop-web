@@ -1,6 +1,6 @@
 import { api } from '@/lib'
 
-interface ApproveOrderParams {
+export interface ApproveOrderParams {
   orderId: string
 }
 

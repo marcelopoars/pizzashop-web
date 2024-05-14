@@ -1,6 +1,6 @@
 import { api } from '@/lib'
 
-interface CancelOrderParams {
+export interface CancelOrderParams {
   orderId: string
 }
 

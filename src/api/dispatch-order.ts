@@ -1,6 +1,6 @@
 import { api } from '@/lib'
 
-interface DispatchOrderParams {
+export interface DispatchOrderParams {
   orderId: string
 }
 
